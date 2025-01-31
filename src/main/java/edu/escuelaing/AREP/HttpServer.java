@@ -39,8 +39,7 @@ public class HttpServer {
         }
     }
 
-    private static String createOutput(String dataPage, String name, OutputStream output, String request) throws IOException {
-        System.out.println(request);
+    private static String createOutput(String dataPage, String name, OutputStream output, String request) throws IOException {  
         String outputLine = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: " + dataPage + "\r\n"
                 + "\r\n";
@@ -53,7 +52,6 @@ public class HttpServer {
             ObjectMapper objectMapper = new ObjectMapper();
             String json = objectMapper.writeValueAsString(grades);
             if(request.contains("POST")){
-                System.out.println("a");
                 return "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: application/json\r\n"
                 + "\r\n"
@@ -88,13 +86,10 @@ public class HttpServer {
         boolean isFirstLine = true;
         String request = "POST";
         while ((inputLine = in.readLine()) != null) {
-            System.out.println(inputLine);
-            System.out.println(request);
             if (isFirstLine) {
                 String[] data = inputLine.split(" ");
                 name = data[1];
                 request = data[0];
-                System.out.println(request);
                 if (name.split("\\.").length > 1) {
                     type = getType(name.split("\\.")[1]);
                 }
@@ -107,7 +102,6 @@ public class HttpServer {
                 break;
             }
         }
-        System.out.println(request);
         if (type == null) {
             name = "/index.html";
             type = "html";

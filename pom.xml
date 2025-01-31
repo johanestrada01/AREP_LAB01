@@ -16,8 +16,18 @@
             <configuration>
                 <source>17</source> 
                 <target>17</target>
+                <mainClass>edu.escuelaing.AREP.HttpServer</mainClass> 
             </configuration>
         </plugin>
+        <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>3.5.0</version>
+    <configuration>
+        <mainClass>edu.escuelaing.AREP.HttpServer</mainClass>
+    </configuration>
+</plugin>
+
     </plugins>
 </build>
 
