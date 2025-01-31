@@ -28,4 +28,4 @@ Para probar el servidor, se ha desarrollado una aplicación web que incluye comu
 - Ingresar a 127.0.0.1:35000
 
 ### Arquitectura
-![Arquitectura](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblogs.ugr.es%2Ftecweb%2Flos-codigos-respuesta-del-servidor-http-claves-arquitectura%2F&psig=AOvVaw273OSBCjrx7ltS6fZhwSET&ust=1738376780990000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCT9Kf0nosDFQAAAAAdAAAAABAE)
+![Arquitectura](https://www.cablenaranja.com/wp-content/uploads/2021/08/Introduccion-Al-HTML-CableNaranja-1.png)
