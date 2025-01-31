@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class HttpServer {
 
-    private static TreeMap<String, Integer> grades = new TreeMap<>();
+    public static TreeMap<String, Integer> grades = new TreeMap<>();
 
     public static void main(String[] args) throws IOException {
         while (true) {
@@ -39,7 +39,7 @@ public class HttpServer {
         }
     }
 
-    private static String createOutput(String dataPage, String name, OutputStream output, String request) throws IOException {  
+    public static String createOutput(String dataPage, String name, OutputStream output, String request) throws IOException {  
         String outputLine = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: " + dataPage + "\r\n"
                 + "\r\n";
@@ -66,7 +66,7 @@ public class HttpServer {
         }
     }
 
-    private static void sendImage(String outputLine, OutputStream output, File file) throws IOException{
+    public static void sendImage(String outputLine, OutputStream output, File file) throws IOException{
         output.write(outputLine.getBytes());
             try (FileInputStream fileInputStream = new FileInputStream(file)) {
                 byte[] buffer = new byte[1024];
@@ -77,7 +77,7 @@ public class HttpServer {
             }
     }
 
-    private static String readInput(BufferedReader in) throws IOException {
+    public static String readInput(BufferedReader in) throws IOException {
         String inputLine;
         String type = null;
         String name = null;
@@ -129,7 +129,7 @@ public class HttpServer {
         return type + " " + name + " " + request;
     }
 
-    private static String getType(String type) {
+    public static String getType(String type) {
         HashMap<String, String> mimeTypes = new HashMap<>();
         mimeTypes.put("png", "image/png");
         mimeTypes.put("html", "text/html");
@@ -139,7 +139,7 @@ public class HttpServer {
         return mimeTypes.get(type);
     }
 
-    private static String readHtmlFile(String filePath) throws IOException {
+    public static String readHtmlFile(String filePath) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
 
         try (BufferedReader br = new BufferedReader(new java.io.FileReader(filePath))) {
@@ -151,7 +151,7 @@ public class HttpServer {
         return contentBuilder.toString();
     }
 
-    private static void putData(String name, Integer grade) {
+    public static void putData(String name, Integer grade) {
         grades.put(name, grade);
     }
 
