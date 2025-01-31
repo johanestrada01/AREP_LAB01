@@ -28,4 +28,4 @@ Para probar el servidor, se ha desarrollado una aplicación web que incluye comu
 - Ingresar a 127.0.0.1:35000
 
 ### Arquitectura
-
+![Arquitectura](https://www.cablenaranja.com/wp-content/uploads/2021/08/Introduccion-Al-HTML-CableNaranja-1.png)
